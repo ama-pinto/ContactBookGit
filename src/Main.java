@@ -13,6 +13,8 @@ public class Main {
     public static final String SET_PHONE      = "SP";
     public static final String SET_EMAIL      = "SE";
     public static final String LIST_CONTACTS  = "LC";
+    public static final String GET_NAME = "GN";
+    public static final String EQUAL_PHONE = "EP";
     public static final String QUIT           = "Q";
 
     //Constantes que definem as mensagens para o utilizador
@@ -55,6 +57,12 @@ public class Main {
                     break;
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
+                    break;
+                case GET_NAME:
+                    getName(in, cbook);
+                    break;
+                case EQUAL_PHONE:
+                    equalPhone(cbook);
                     break;
                 default:
                     System.out.println(COMMAND_ERROR);
@@ -158,7 +166,7 @@ public class Main {
         if(name == null)
             System.out.println(PHONE_NOT_EXIST);
         else 
-            System.out.println(name)
+            System.out.println(name);
     }
 
     private static void equalPhone(ContactBook cBook){
