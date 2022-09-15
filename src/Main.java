@@ -22,6 +22,9 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
+    public static final String PHONE_NOT_EXIST = "Phone number does not exist."
+    public static final String SHARED_NUMBERS = "There are contacts that share phone numbers."
+    public static final String NOT_SHARED_NUMBERS = "All contacts have different phone numbers"
     public static final String QUIT_MSG = "Goodbye!";
     public static final String COMMAND_ERROR = "Unknown command.";
 
@@ -146,5 +149,22 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+    private static void getName(Scanner in, ContactBook cBook){
+        int phone;
+        phone = in.nextInt();
+        String name = cBook.getName(phone);
+        if(name == null)
+            System.out.println(PHONE_NOT_EXIST);
+        else 
+            System.out.println(name)
+    }
+
+    private static void equalPhone(ContactBook cBook){
+        if(cBook.sharesContacts())
+            System.out.println(SHARED_NUMBERS);
+        else
+            System.out.println(NOT_SHARED_NUMBERS);
     }
 }
