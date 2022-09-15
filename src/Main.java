@@ -162,7 +162,7 @@ public class Main {
     }
 
     private static void equalPhone(ContactBook cBook){
-        if(cBook.sharesContacts())
+        if(cBook.phonesRepeated())
             System.out.println(SHARED_NUMBERS);
         else
             System.out.println(NOT_SHARED_NUMBERS);
