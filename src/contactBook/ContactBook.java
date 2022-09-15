@@ -100,4 +100,13 @@ public class ContactBook {
         return null;
     }
 
+    public boolean phonesRepeated() {
+        for (int i = 0; i < counter; i++)
+            for (int j = counter - 1; j > i; j--)
+                if (contacts[i].getPhone() == contacts[j].getPhone())
+                    return true;
+        return false;
+    }
+
+
 }
